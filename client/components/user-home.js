@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import BeamLayout from './BeamLayout'
 
 export const UserHome = (props) => {
   const {email} = props
@@ -15,6 +16,7 @@ export const UserHome = (props) => {
         <option>T-Beam</option>
         <option>Channel-Beam</option>
       </select>
+      <BeamLayout beamType={'dogcatzebra'} />
     </div>
   )
 }
