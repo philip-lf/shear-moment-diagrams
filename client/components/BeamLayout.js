@@ -1,22 +1,32 @@
 import React from 'react'
-// import {connect} from 'react-redux'
 
 const BeamLayout = (props) => {
 
   return (
     <div>
-        <p>{props.beamType}</p>
+        <p>{beam(props.beamType)}</p>
+        <div id="beam" />
     </div>
   )
 }
 
 export default BeamLayout
 
-// const mapState = (state) => {
-//   return {
-//     email: state.user.email
-//   }
-// }
+// return div representing associate shape
+function beam(beamType) {
+  let beamShape = document.getElementById('beam')
 
-// export default connect(mapState)(UserHome)
-
+  switch (beamType) {
+    case 'I-Beam':
+      beamShape.style.backgroundColor = 'red'
+      return 2
+    case 'T-Beam':
+      beamShape.style.backgroundColor = 'yellow'
+      return 3
+    case 'Channel-Beam':
+      beamShape.style.backgroundColor = 'black'
+      return 4
+    default: // Rectangle
+      return 1
+  }
+}
